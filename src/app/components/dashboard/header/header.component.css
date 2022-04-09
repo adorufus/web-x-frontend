@@ -10,7 +10,7 @@
 }
 
 .nav-item .btn:hover {
-  background-color: rgb(255, 87, 143);
+  background-color: #FF8080;
   border-radius: 30px;
   color: white;
   padding: 5px 30px 5px;
@@ -28,8 +28,9 @@
 }
 
 .btn-contact {
-  background-color: rgb(255, 87, 143);
-  color: white;
+  background-color: #ffb7b7;
+  color: #ff3838;
+  font-weight: bold;
   outline: none;
   height: 50px;
   width: 200px;

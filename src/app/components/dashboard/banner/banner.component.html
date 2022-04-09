@@ -2,30 +2,36 @@
   id="jumbo-image"
   src="assets/images/main-visual.png"
   alt="main-visual"
-  class="img-fluid"
+  class="w-100"
 />
 <div style="height: 100px"></div>
-<div id="banner" class="container">
+<div class="container">
   <div
     class="row"
     style="font-weight: bold; font-size: 30px; margin-bottom: 20px"
   >
-    <div class="col-lg">Featured Works</div>
+    <div id="banner" class="col-lg">Featured Works</div>
     <div class="col-lg d-flex p-2 justify-content-end">
       <a style="font-size: 20px; color: coral" href>View All ></a>
     </div>
   </div>
 </div>
 <div class="container">
-  <div class="owl-carousel">
-    <div class="card">
-      <img
-        data-src="assets/images/banner1.png"
-        alt="banner1"
-        class="owl-lazy"
-      />
-    </div>
-    <div class="card">
+  <div *ngIf="banners?.data?.length! > 0">
+    <owl-carousel-o #owlCarousel [options]="customOptions">
+      <ng-container
+        class="card"
+        *ngFor="let banner of banners?.data; let i = index"
+      >
+        <ng-template carouselSlide>
+          <img
+            [src]="banner.bannerFile"
+            [alt]="banner.bannerName"
+            style="object-fit: cover;"
+          />
+        </ng-template>
+      </ng-container>
+      <!-- <div class="card">
       <img
         data-src="assets/images/banner2.png"
         alt="banner2"
@@ -45,6 +51,7 @@
         alt="banner4"
         class="owl-lazy"
       />
-    </div>
+    </div> -->
+    </owl-carousel-o>
   </div>
 </div>

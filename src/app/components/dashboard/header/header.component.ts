@@ -16,6 +16,10 @@ export class HeaderComponent implements OnInit {
     this.viewportScroller.scrollToAnchor(elementId);
   }
 
+  scrollToElement(element: any): void {
+    (document.getElementById(element) as HTMLElement).scrollIntoView({behavior: "smooth", block: "start", inline: "start"})
+  }
+
   public setActiveTab(tabName: string) {
     this.activeTab = tabName;
   }
