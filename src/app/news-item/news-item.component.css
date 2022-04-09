@@ -1,0 +1,14 @@
+.card {
+    border-radius: 30px;
+}
+
+.card-image {
+    height: 200px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    object-fit: fill;
+}
+
+.card-subtitle {
+    font-size: 12px;
+}
