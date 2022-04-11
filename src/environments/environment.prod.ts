@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseUrl: 'http://localhost:8000/api/v1/',
+  baseUrl: 'https://terrible-cow-4.loca.lt/webx-1500b/us-central1/app/api/v1/',
 };

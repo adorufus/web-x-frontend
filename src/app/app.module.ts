@@ -19,7 +19,7 @@ import { NewsComponent } from './components/news/news.component';
 import { NewsItemComponent } from './components/news-item/news-item.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { HttpModule } from './modules/http/http.module';
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment.prod';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 

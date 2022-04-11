@@ -2,28 +2,27 @@ import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { EnvironmentConfig, ENV_CONFIG } from 'src/app/interfaces/env-config';
-import { Banner } from 'src/app/models/banner.model';
+import { News } from 'src/app/models/news.model';
 
 @Injectable({
   providedIn: 'root',
 })
-export class BannerService {
+export class NewsService {
   apiUrl?: string;
+
   constructor(
     private http: HttpClient,
     @Inject(ENV_CONFIG) config: EnvironmentConfig
   ) {
-    console.log(config.environment.baseUrl);
     this.apiUrl = `${config.environment.baseUrl}`;
   }
 
-  getBanner(): Observable<Banner> {
-    return this.http.get<Banner>(this.apiUrl! + 'banner/all', {
+  getNews(): Observable<News> {
+    console.log("hit news service");
+    return this.http.get<News>(this.apiUrl! + 'news/all', {
       headers: {
-        "Bypass-Tunnel-Reminder": "true"
-      }
+        'Bypass-Tunnel-Reminder': 'true',
+      },
     });
   }
-
-  onClick() {}
 }

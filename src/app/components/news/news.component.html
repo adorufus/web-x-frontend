@@ -1,9 +1,11 @@
 <div class="container">
   <div class="row">
     <div class="col-lg">
-      <app-news-item></app-news-item>
-      <app-news-item></app-news-item>
-      <app-news-item></app-news-item>
+      <div *ngIf="news?.data?.length! > 0">
+        <div *ngFor="let newsData of news?.data">
+          <app-news-item [newsData]="newsData"></app-news-item>
+        </div>
+      </div>
     </div>
     <div class="col-lg">
       <div style="height: 100px">
@@ -13,7 +15,8 @@
           data-height="500"
           data-theme="light"
           href="https://twitter.com/TwitterDev?ref_src=twsrc%5Etfw"
-          >Tweets by TwitterDev</a>
+          >Tweets by TwitterDev</a
+        >
       </div>
     </div>
   </div>

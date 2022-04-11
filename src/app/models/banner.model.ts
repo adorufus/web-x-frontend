@@ -4,7 +4,7 @@ export class Banner {
 
 class Data {
   bannerName?: string;
-  url?: String;
-  metaname?: String;
-  bannerFile?: String;
+  url?: string;
+  metaname?: string;
+  bannerFile?: string;
 }

@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-lg-5">
       <img
-        src="assets/images/banner1.png"
+        src={{newsData.thumbnail}}
         class="card-image"
         style="height: 150px; object-fit: cover"
         alt=""
@@ -10,8 +10,8 @@
     </div>
     <div class="col-lg-6">
       <div class="card-body">
-        <h5 class="card-title">News Test</h5>
-        <div class="card-subtitle">Lorem Ipsum is simply dummy text</div>
+        <h5 class="card-title">{{newsData.title}}</h5>
+        <div class="card-subtitle">{{newsData.article}}</div>
       </div>
     </div>
   </div>
