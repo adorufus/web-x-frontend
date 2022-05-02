@@ -21,7 +21,8 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import { HttpModule } from './modules/http/http.module';
 import { environment } from 'src/environments/environment.prod';
 import { CarouselModule } from 'ngx-owl-carousel-o';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { FooterComponent } from './components/footer/footer/footer.component'
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
     NewsComponent,
     NewsItemComponent,
     AboutUsComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

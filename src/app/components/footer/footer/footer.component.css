@@ -1,0 +1,9 @@
+.btn-subscribe {
+    background-color: #b7e5ff;
+    color: #3856ff;
+    font-weight: bold;
+    outline: none;
+    height: 50px;
+    width: 200px;
+    border-radius: 30px;
+}
