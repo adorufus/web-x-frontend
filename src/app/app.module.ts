@@ -22,7 +22,14 @@ import { HttpModule } from './modules/http/http.module';
 import { environment } from 'src/environments/environment.prod';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { FooterComponent } from './components/footer/footer/footer.component'
+import { FooterComponent } from './components/footer/footer/footer.component';
+import { AllNewsComponent } from './components/news/all-news/all-news.component';
+import { NewsDetailsComponent } from './components/news/news-details/news-details.component';
+import { NewsCardComponent } from './components/news/news-details/news-card/news-card.component';
+import { WorksComponent } from './components/works/works.component';
+import { WorkDetailsComponent } from './components/works/work-details/work-details.component';
+import { AllWorksComponent } from './components/works/all-works/all-works.component';
+import { AboutPageComponent } from './components/about-us/about-page/about-page.component'
 
 @NgModule({
   declarations: [
@@ -38,6 +45,13 @@ import { FooterComponent } from './components/footer/footer/footer.component'
     NewsItemComponent,
     AboutUsComponent,
     FooterComponent,
+    AllNewsComponent,
+    NewsDetailsComponent,
+    NewsCardComponent,
+    WorksComponent,
+    WorkDetailsComponent,
+    AllWorksComponent,
+    AboutPageComponent,
   ],
   imports: [
     BrowserModule,

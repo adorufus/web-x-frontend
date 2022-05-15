@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg sticky-top navbar-light flex-lg-nowrap flex-warp">
   <div class="container">
-    <a class="navbar-brand" flex-grow-1 style="font-weight: bold;">Navbar</a>
+    <a class="navbar-brand" flex-grow-1 style="font-weight: bold;">Artemiz</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -15,16 +15,16 @@
     <div class="collapse navbar-collapse flex-grow-1 justify-content-center" id="navbarNav">
       <ul class="navbar-nav mx-auto">
         <li class="nav-item active d-flex">
-          <button class="btn nav-link" (click)="scrollToElement('jumbo-image');">Home</button>
+          <button class="btn nav-link" routerLink="" (click)="scrollToElement('jumbo-image');">Home</button>
         </li>
         <li class="nav-item d-flex">
-          <button class="btn nav-link"(click)="scrollToElement('banner');">Works</button>
+          <button class="btn nav-link" routerLink="/works">Works</button>
         </li>
         <li class="nav-item d-flex">
-          <button class=" btn nav-link" (click)="scrollToElement('about')">About Us</button>
+          <button class=" btn nav-link" routerLink="" (click)="scrollToElement('about')">About Us</button>
         </li>
         <li class="nav-item d-flex">
-          <button class="btn nav-link" (click)="scrollToElement('news')">News</button>
+          <button class="btn nav-link" routerLink="/news">News</button>
         </li>
       </ul>
       <button type="button" class="btn btn-contact">Contact Us</button>

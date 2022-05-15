@@ -1,5 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AllNewsComponent } from './components/news/all-news/all-news.component';
+import { NewsDetailsComponent } from './components/news/news-details/news-details.component';
+import { AllWorksComponent } from './components/works/all-works/all-works.component';
+import { WorkDetailsComponent } from './components/works/work-details/work-details.component';
+import { WorksComponent } from './components/works/works.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroesComponent } from './heroes/heroes.component';
@@ -22,6 +27,26 @@ const routes: Routes = [
     redirectTo: '/home',
     pathMatch: 'full',
   },
+  {
+    path: 'news',
+    component: AllNewsComponent
+  },
+  {
+    path: 'news/:id',
+    component: NewsDetailsComponent
+  },
+  {
+    path: 'works',
+    component: WorksComponent
+  },
+  {
+    path: 'works/:type',
+    component: AllWorksComponent
+  },
+  {
+    path: 'works/:type/:id',
+    component: WorkDetailsComponent
+  }
 ];
 
 @NgModule({

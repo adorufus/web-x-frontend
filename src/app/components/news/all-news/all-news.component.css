@@ -1,0 +1,14 @@
+.news-big {
+    display: flex;
+     background-color: rgb(255, 239, 166);
+     text-align: center;
+     /* justify-content: center; */
+     padding-left: 12px;
+     align-items: center;
+     border-radius: 10px;
+     height: 100px;
+     font-size: 45pt;
+     font-weight: bold;
+     color: rgb(255, 208, 0);
+     margin-bottom: 30px;
+}

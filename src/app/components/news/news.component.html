@@ -1,10 +1,11 @@
 <div class="container">
   <div class="row">
     <div class="col-lg">
-      <div *ngIf="news?.data?.length! > 0">
+      <div  *ngIf="news?.data?.length! > 0">
         <div *ngFor="let newsData of news?.data">
           <app-news-item [newsData]="newsData"></app-news-item>
         </div>
+        <a class="link d-flex" routerLink="/news">View All >></a>
       </div>
     </div>
     <div class="col-lg">
@@ -14,8 +15,8 @@
           data-width="500"
           data-height="500"
           data-theme="light"
-          href="https://twitter.com/TwitterDev?ref_src=twsrc%5Etfw"
-          >Tweets by TwitterDev</a
+          href="https://twitter.com/ArtemizComs?ref_src=twsrc%5Etfw"
+          >Tweets by ArtemizComs</a
         >
       </div>
     </div>

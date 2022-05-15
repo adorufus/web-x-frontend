@@ -1,0 +1,43 @@
+.news-big {
+    display: flex;
+     background-color: rgb(166, 197, 255);
+     text-align: center;
+     /* justify-content: center; */
+     padding-left: 12px;
+     align-items: center;
+     border-radius: 10px;
+     height: 100px;
+     font-size: 45pt;
+     font-weight: bold;
+     color: rgb(0, 140, 255);
+     margin-bottom: 30px;
+}
+
+.w-100 {
+    border-radius: inherit;
+}
+
+.holder {
+    position: relative;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgb(0 0 0 / 7%);
+}
+
+.holder :hover {
+    cursor: pointer;
+}
+
+.top-text {
+    position: absolute;
+    top: 8px;
+    left: 20px;
+    font-size: 30pt;
+    font-weight: bold;
+    color: white;
+    text-shadow:
+    -2px -2px 0 #000,  
+    2px -2px 0 #000,
+    -2px  2px 0 #000,
+     2px  2px 0 #000;
+}

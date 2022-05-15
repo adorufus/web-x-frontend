@@ -1,0 +1,18 @@
+.card {
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 7%);
+    border: none;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    border-radius: 20px;
+}
+
+.mb {
+    margin-bottom: 30px;
+}
+
+.img-cover { 
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+}
