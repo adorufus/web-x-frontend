@@ -19,6 +19,7 @@ export class NewsService {
 
   getNews(): Observable<News> {
     console.log("hit news service");
+    console.log(this.apiUrl);
     return this.http.get<News>(this.apiUrl! + 'news/all', {
       headers: {
         'Bypass-Tunnel-Reminder': 'true',

@@ -6,21 +6,11 @@ import { AllWorksComponent } from './components/works/all-works/all-works.compon
 import { WorkDetailsComponent } from './components/works/work-details/work-details.component';
 import { WorksComponent } from './components/works/works.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { HeroDetailComponent } from './hero-detail/hero-detail.component';
-import { HeroesComponent } from './heroes/heroes.component';
 
 const routes: Routes = [
   {
-    path: 'heroes',
-    component: HeroesComponent,
-  },
-  {
     path: 'home',
     component: DashboardComponent,
-  },
-  {
-    path: 'detail/:id',
-    component: HeroDetailComponent,
   },
   {
     path: '',
