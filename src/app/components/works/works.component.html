@@ -8,35 +8,13 @@
     <!-- Section: Images -->
     <section class="container">
         <div class="row">
-            <div class="col-lg-6 mb-4 mb-lg-30 holder" routerLink="../works/live-2d">
-                <img src="assets/images/banner1.png" class="w-100" />
-                <div class="top-text">LIVE 2D</div>
-            </div>
-
-            <div class="col-lg-6 mb-4 mb-lg-30 holder" routerLink="../works/3d">
-                <img src="assets/images/banner2.png" class="w-100" />
-                <div class="top-text">3D</div>
-            </div>
-
-            <div class="col-lg-6 mb-4 mb-lg-30 holder" routerLink="../works/visual-novel">
-
-                <img src="assets/images/banner3.png" class="w-100" />
-                <div class="top-text">VISUAL NOVEL</div>
-
-            </div>
-            <div class="col-lg-6 mb-4 mb-lg-30 holder" routerLink="../works/illustration">
-
-                <img src="assets/images/banner4.png" class="w-100" />
-                <div class="top-text">ILLUSTRATION</div>
-            </div>
-            <div class="col-lg-6 mb-4 mb-lg-30 holder" routerLink="../works/animation">
-
-                <img src="https://mdbcdn.b-cdn.net/img/screens/yt/screen-video-3.webp" class="w-100" />
-                <div class="top-text">ANIMATION</div>
-            </div>
-            <div class="col-lg-6 mb-4 mb-lg-30 holder" routerLink="../works/graphic-design">
-                <img src="https://mdbcdn.b-cdn.net/img/screens/yt/screen-video-3.webp" class="w-100" />
-                <div class="top-text">GRAPHIC DESIGN</div>
+            <div *ngIf="category?.data?.length! > 0">
+                <div *ngFor="let categoryData  of category?.data">
+                    <div class="col-lg-6 mb-4 mb-lg-30 holder" routerLink="../works/{{categoryData.portfolio}}">
+                        <img src={{categoryData.category_image_file}} class="w-100" />
+                        <div class="top-text">{{categoryData.category_name}}</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
