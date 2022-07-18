@@ -42,10 +42,10 @@ const routes: Routes = [
     path: 'works/:type/:id',
     component: WorkDetailsComponent
   },
-  {
-    path: 'admin',
-    component: AdminDashboardComponent,
-  },
+  // {
+  //   path: 'admin',
+  //   component: AdminDashboardComponent,
+  // },
   {
     path: 'admin/news',
     component: NewsDashboardComponent,
