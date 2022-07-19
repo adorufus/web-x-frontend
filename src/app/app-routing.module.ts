@@ -6,11 +6,6 @@ import { AllWorksComponent } from './components/works/all-works/all-works.compon
 import { WorkDetailsComponent } from './components/works/work-details/work-details.component';
 import { WorksComponent } from './components/works/works.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
-import { NewsDashboardComponent } from './components/admin/news-dashboard/news-dashboard.component';
-import { BannerDashboardComponent } from './components/admin/banner-dashboard/banner-dashboard.component';
-import { CategoryDashboardComponent } from './components/admin/category-dashboard/category-dashboard.component';
-import { PortfolioDashboardComponent } from './components/admin/portfolio-dashboard/portfolio-dashboard.component';
 
 const routes: Routes = [
   {
@@ -42,30 +37,6 @@ const routes: Routes = [
     path: 'works/:type/:id',
     component: WorkDetailsComponent
   },
-  // {
-  //   path: 'admin',
-  //   component: AdminDashboardComponent,
-  // },
-  {
-    path: 'admin/news',
-    component: NewsDashboardComponent,
-    outlet: 'admin'
-  },
-  {
-    path: 'admin/banner',
-    component: BannerDashboardComponent,
-    outlet: 'admin'
-  },
-  {
-    path: 'admin/category',
-    component: CategoryDashboardComponent,
-    outlet: 'admin'
-  },
-  {
-    path: 'admin/portfolio',
-    component: PortfolioDashboardComponent,
-    outlet: 'admin'
-  }
 ];
 
 @NgModule({

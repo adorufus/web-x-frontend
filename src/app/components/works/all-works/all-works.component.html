@@ -1,6 +1,7 @@
 <section class="container">
-    <div *ngIf="portfolio?.tier_list?.length! > 0">
-        <div *ngFor="let tierData of portfolio?.tier_list; index as i">
+    <div *ngIf="portfolio?.length! > 0">
+        test
+        <div *ngFor="let tierData of portfolio; index as i">
             <div *ngIf="!(i % 2 == 1); else even_tier">
                 <div class="row">
                     <div class="col">

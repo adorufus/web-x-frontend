@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Portfolio, PortfolioData } from 'src/app/models/portfolio/portfolio.model';
+import { Category, CategoryData, Portfolio, PortfolioData, Tier } from 'src/app/models/portfolio/portfolio.model';
 import { PortfolioService } from 'src/app/services/portfolio/portfolio.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { PortfolioService } from 'src/app/services/portfolio/portfolio.service';
 export class AllWorksComponent implements OnInit {
 
   @Input() id?: string
-  portfolio?: PortfolioData
+  portfolio?: Tier[]
 
   constructor(private route: ActivatedRoute, private portfolioService: PortfolioService) { }
 
@@ -25,11 +25,14 @@ export class AllWorksComponent implements OnInit {
 
   getPortfolioData(): void {
     this.portfolioService.getPortfolios(this.id!).subscribe({
-      next: (data) => {
-        this.portfolio = data;
+      next: async (data) => {
+        console.log(data);
+        this.portfolio = data.tier_list;
+
+        console.log(this.portfolio);
       },
       complete: () => {
-        console.log("fetching data completed")
+        console.log("fetching works data completed")
       },
       error: (err) => {
         console.log(`an error occured: ${err}`)

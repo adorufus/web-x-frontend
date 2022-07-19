@@ -2,12 +2,12 @@ export class Category {
     data?: CategoryData[]
 }
 
-class CategoryData {
+export class CategoryData {
     _id?: string
     metaname?: string
     category_image_file?: string
     category_name?: string
-    portfolio?: Portfolio
+    tier_list?: Tier[]
 }
 
 export class Portfolio {
@@ -20,7 +20,7 @@ export class PortfolioData {
     tier_list?: Tier[]
 }
 
-class Tier {
+export class Tier {
     _id?: string
     metanames?: string[]
     tier_portofolio_images?: string[]
