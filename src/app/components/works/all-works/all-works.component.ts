@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Category, CategoryData, Portfolio, PortfolioData, Tier } from 'src/app/models/portfolio/portfolio.model';
+import { Category, CategoryData, Portfolio, PortfolioData, Tier, TierData } from 'src/app/models/portfolio/portfolio.model';
 import { PortfolioService } from 'src/app/services/portfolio/portfolio.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { PortfolioService } from 'src/app/services/portfolio/portfolio.service';
 export class AllWorksComponent implements OnInit {
 
   @Input() id?: string
-  portfolio?: Tier[]
+  portfolio?: TierData
 
   constructor(private route: ActivatedRoute, private portfolioService: PortfolioService) { }
 
@@ -27,7 +27,7 @@ export class AllWorksComponent implements OnInit {
     this.portfolioService.getPortfolios(this.id!).subscribe({
       next: async (data) => {
         console.log(data);
-        this.portfolio = data.tier_list;
+        this.portfolio = await data;
 
         console.log(this.portfolio);
       },

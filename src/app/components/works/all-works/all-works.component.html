@@ -1,11 +1,11 @@
 <section class="container">
-    <div *ngIf="portfolio?.length! > 0">
-        test
-        <div *ngFor="let tierData of portfolio; index as i">
+    <div *ngIf="portfolio?.data?.length! > 0">
+        <div *ngFor="let tierData of portfolio?.data; index as i">
             <div *ngIf="!(i % 2 == 1); else even_tier">
-                <div class="row">
+                <div class="row" style="margin-top: 25px;">
                     <div class="col">
                         <div class="tier-txt">{{tierData.tier_name}}</div>
+                        <div style="margin-top: 25px;"></div>
                         <div class="tier-detail">{{tierData.tier_description}}</div>
                     </div>
                     <div class="col">

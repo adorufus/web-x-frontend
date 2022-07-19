@@ -20,6 +20,10 @@ export class PortfolioData {
     tier_list?: Tier[]
 }
 
+export class TierData {
+    data?: Tier[]
+}
+
 export class Tier {
     _id?: string
     metanames?: string[]
