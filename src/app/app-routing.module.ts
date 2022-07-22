@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AllNewsComponent } from './components/news/all-news/all-news.component';
 import { NewsDetailsComponent } from './components/news/news-details/news-details.component';
+import { TermsComponent } from './components/terms/terms.component';
 import { AllWorksComponent } from './components/works/all-works/all-works.component';
 import { WorkDetailsComponent } from './components/works/work-details/work-details.component';
 import { WorksComponent } from './components/works/works.component';
@@ -28,6 +29,10 @@ const routes: Routes = [
   {
     path: 'works',
     component: WorksComponent
+  },
+  {
+    path: 'terms',
+    component: TermsComponent
   },
   {
     path: 'works/:type',

@@ -36,6 +36,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { TermsComponent } from './components/terms/terms.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { MatListModule } from '@angular/material/list';
     WorkDetailsComponent,
     AllWorksComponent,
     AboutPageComponent,
+    TermsComponent,
   ],
   imports: [
     BrowserModule,
