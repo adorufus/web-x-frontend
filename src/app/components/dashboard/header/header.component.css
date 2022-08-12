@@ -28,11 +28,11 @@
 }
 
 .btn-contact {
-  background-color: #ffb7b7;
-  color: #ff3838;
+  background-color: #ff5c5c;
+  color: #ffffff;
   font-weight: bold;
   outline: none;
   height: 50px;
   width: 200px;
-  border-radius: 30px;
+  border-radius: 10px;
 }

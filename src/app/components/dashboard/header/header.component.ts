@@ -1,5 +1,6 @@
 import { ViewportScroller } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { BROWSER_STORAGE } from 'src/app/utils/storage';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   activeTab = 'Home';
-  constructor(private viewportScroller: ViewportScroller) {}
+  appName = "" ;
+
+  constructor(private viewportScroller: ViewportScroller, @Inject(BROWSER_STORAGE) private storage: Storage) {
+    this.appName = this.storage.getItem("app_name") ?? ""
+  }
 
   ngOnInit(): void {}
 

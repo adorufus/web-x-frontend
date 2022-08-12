@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { BROWSER_STORAGE } from 'src/app/utils/storage';
 
 @Component({
   selector: 'app-footer',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  email: string = ""
+  phone: string = ""
+
+  constructor(@Inject(BROWSER_STORAGE) private storage: Storage) {
+    this.email = this.storage.getItem("company_email") ?? ""
+    this.phone = this.storage.getItem("company_phone") ?? ""
+  }
 
   ngOnInit(): void {
   }

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -37,6 +37,11 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { TermsComponent } from './components/terms/terms.component';
+import { InitializerService } from './services/initializer.service';
+
+export function initialize(setup: InitializerService) {
+  return () => setup.init()
+}
 
 @NgModule({
   declarations: [
@@ -75,7 +80,12 @@ import { TermsComponent } from './components/terms/terms.component';
     MatSidenavModule,
     MatListModule,
   ],
-  providers: [],
+  providers: [InitializerService, {
+    provide: APP_INITIALIZER,
+    useFactory: initialize,
+    deps: [InitializerService],
+    multi: true
+  }],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

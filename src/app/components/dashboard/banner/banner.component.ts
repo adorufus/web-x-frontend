@@ -1,8 +1,9 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { OwlOptions, CarouselComponent } from 'ngx-owl-carousel-o';
 import { OwlDOMData } from 'ngx-owl-carousel-o/lib/models/owlDOM-data.model';
 import { Banner } from 'src/app/models/banner.model';
 import { BannerService } from 'src/app/services/banner/banner.service';
+import { BROWSER_STORAGE } from 'src/app/utils/storage';
 
 @Component({
   selector: 'app-banner',
@@ -11,6 +12,7 @@ import { BannerService } from 'src/app/services/banner/banner.service';
 })
 export class BannerComponent implements OnInit {
   banners?: Banner;
+  jumbotronUrl: string = "";
 
   customOptions: OwlOptions = {
     loop: true,
@@ -23,7 +25,9 @@ export class BannerComponent implements OnInit {
     lazyLoad: true,
   };
 
-  constructor(private bannerService: BannerService) {}
+  constructor(private bannerService: BannerService, @Inject(BROWSER_STORAGE) private storage: Storage) {
+    this.jumbotronUrl = this.storage.getItem("jumbotron_image") ?? ""
+  }
 
   ngOnInit(): void {
     this.getBanners();

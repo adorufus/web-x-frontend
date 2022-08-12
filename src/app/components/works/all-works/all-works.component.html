@@ -21,10 +21,14 @@
                         </div>
                         <div style="height: 20px;"></div>
                         <div>
-                            <div class="row" *ngIf="tierData.tier_portofolio_images?.length! > 0">
+                            <div class="row" *ngIf="tierData.tier_portofolio_files?.length! > 0">
                                 <div class="col-lg-4 mb-4 mr-4 mb-lg-30 holder"
-                                    *ngFor="let imageUrl of tierData.tier_portofolio_images">
-                                    <img src={{imageUrl}} class="w-100 sample-height" />
+                                    *ngFor="let imageUrl of tierData.tier_portofolio_files">
+                                    <img *ngIf="imageUrl.type === 'image'; else video " src={{imageUrl.url}}
+                                        class="w-100 sample-height" />
+                                    <ng-template #video>
+                                        <video controls src={{imageUrl.url}} class="w-100 sample-height"></video>
+                                    </ng-template>
                                 </div>
                             </div>
                         </div>
@@ -53,10 +57,14 @@
                     </div>
                     <div style="height: 20px;"></div>
                     <div>
-                        <div class="row" *ngIf="tierData.tier_portofolio_images?.length! > 0">
+                        <div class="row" *ngIf="tierData.tier_portofolio_files?.length! > 0">
                             <div class="col-lg-4 mb-4 mr-4 mb-lg-30 holder"
-                                *ngFor="let imageUrl of tierData.tier_portofolio_images">
-                                <img src={{imageUrl}} class="w-100 sample-height" />
+                                *ngFor="let imageUrl of tierData.tier_portofolio_files">
+                                <img *ngIf="imageUrl.type === 'image'; else video " src={{imageUrl.url}}
+                                    class="w-100 sample-height" />
+                                <ng-template #video>
+                                    <video src={{imageUrl.url}} class="w-100 sample-height"></video>
+                                </ng-template>
                             </div>
                         </div>
                     </div>
