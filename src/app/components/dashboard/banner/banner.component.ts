@@ -15,13 +15,27 @@ export class BannerComponent implements OnInit {
   jumbotronUrl: string = "";
 
   customOptions: OwlOptions = {
-    loop: true,
-    stagePadding: 100,
-    margin: 10,
-    center: true,
-    items: 2,
-    autoplay: true,
-    autoplayTimeout: 3000,
+    responsive: {
+      0: {
+        loop: true,
+        stagePadding: 100,
+        margin: 10,
+        autoHeight: true,
+        center: true,
+        items: 1,
+        autoplay: true,
+        autoplayTimeout: 3000,
+      },
+      768: {
+        loop: true,
+        stagePadding: 100,
+        margin: 10,
+        center: true,
+        items: 2,
+        autoplay: true,
+        autoplayTimeout: 3000,
+      }
+    },
     lazyLoad: true,
   };
 

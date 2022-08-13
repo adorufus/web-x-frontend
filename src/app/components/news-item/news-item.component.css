@@ -1,14 +1,121 @@
-.card {
-    border-radius: 30px;
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .card {
+        border-radius: 5px;
+        height: 50px;
+        width: 100%;
+        margin-bottom: 6px;
+    }
+
+    .card-body {
+        padding: 5px;
+    }
+
+    .card-title {
+        margin-bottom: 2px;
+    }
+
+    .image-container {
+        display: none;
+    }
+
+    .card-image {
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+        max-height: 100px;
+    }
+
+    .card-subtitle {
+        font-size: 12px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1; /* number of lines to show */
+        line-clamp: 1;
+        -webkit-box-orient: vertical;
+    }
 }
 
-.card-image {
-    height: 200px;
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
-    object-fit: fill;
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .card {
+        border-radius: 30px;
+        height: 150px;
+        width: 600px;
+        margin-bottom: 12px;
+    }
+
+    .card-image {
+        height: 200px;
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+        object-fit: fill;
+    }
+
+    .card-subtitle {
+        font-size: 12px;
+    }
 }
 
-.card-subtitle {
-    font-size: 12px;
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .card {
+        border-radius: 30px;
+        height: 150px;
+        width: 600px;
+        margin-bottom: 12px;
+    }
+
+    .card-image {
+        height: 200px;
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+        object-fit: fill;
+    }
+
+    .card-subtitle {
+        font-size: 12px;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .card {
+        border-radius: 30px;
+        height: 150px;
+        width: 600px;
+        margin-bottom: 12px;
+    }
+
+    .card-image {
+        height: 200px;
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+        object-fit: fill;
+    }
+
+    .card-subtitle {
+        font-size: 12px;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .card {
+        border-radius: 30px;
+        height: 150px;
+        width: 600px;
+        margin-bottom: 12px;
+    }
+
+    .card-image {
+        height: 150px;
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+        object-fit: fill;
+    }
+
+    .card-subtitle {
+        font-size: 12px;
+    }
 }

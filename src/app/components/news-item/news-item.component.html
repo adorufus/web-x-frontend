@@ -1,16 +1,11 @@
-<div class="card" style="height: 150px; width: 600px; margin-bottom: 12px;">
+<div class="card">
   <div class="row">
-    <div class="col-lg-5">
-      <img
-        src={{newsData.thumbnail}}
-        class="card-image"
-        style="height: 150px; object-fit: cover"
-        alt=""
-      />
+    <div class="col-lg-5 image-container">
+      <img src={{newsData.thumbnail}} class="card-image" alt="" />
     </div>
     <div class="col-lg-6">
       <div class="card-body">
-        <h5 class="card-title">{{newsData.title}}</h5>
+        <h4 class="card-title">{{newsData.title}}</h4>
         <div class="card-subtitle">{{newsData.article}}</div>
       </div>
     </div>

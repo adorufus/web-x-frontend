@@ -38,6 +38,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { TermsComponent } from './components/terms/terms.component';
 import { InitializerService } from './services/initializer.service';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap'
 
 export function initialize(setup: InitializerService) {
   return () => setup.init()
@@ -79,6 +80,7 @@ export function initialize(setup: InitializerService) {
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
+    NgbModule
   ],
   providers: [InitializerService, {
     provide: APP_INITIALIZER,

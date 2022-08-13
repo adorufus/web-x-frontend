@@ -10,6 +10,7 @@ import { BROWSER_STORAGE } from 'src/app/utils/storage';
 export class HeaderComponent implements OnInit {
   activeTab = 'Home';
   appName = "" ;
+  isCollapsed = true;
 
   constructor(private viewportScroller: ViewportScroller, @Inject(BROWSER_STORAGE) private storage: Storage) {
     this.appName = this.storage.getItem("app_name") ?? ""
