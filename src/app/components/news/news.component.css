@@ -2,3 +2,8 @@
     justify-content: right;
     padding-right: 40px;
 }
+
+.twitter-timeline {
+  border-radius: 5px !important;
+  border: 1px solid #dddddd;
+}

@@ -1,18 +1,16 @@
 <img
   id="jumbo-image"
-  src={{jumbotronUrl}}
+  src="{{ jumbotronUrl }}"
   alt="main-visual"
   class="w-100"
 />
-<div style="height: 100px"></div>
 <div class="container">
-  <div
-    class="row"
-    style="font-weight: bold; font-size: 30px; margin-bottom: 20px"
-  >
-    <div id="banner" class="col-lg">Featured Works</div>
-    <div class="col-lg d-flex p-2 justify-content-end">
-      <a style="font-size: 20px; color: coral" routerLink="/works">View All ></a>
+  <div class="row" style="margin-top: 96px;">
+    <div id="banner" class="col-6 section-title">Featured Works</div>
+    <div class="col-6 d-flex justify-content-end">
+      <a style="font-size: 20sp; color: coral" routerLink="/works"
+        >View All ></a
+      >
     </div>
   </div>
 </div>
@@ -27,7 +25,7 @@
           <img
             [src]="banner.bannerFile"
             [alt]="banner.bannerName"
-            style="object-fit: cover;"
+            style="object-fit: cover"
           />
         </ng-template>
       </ng-container>

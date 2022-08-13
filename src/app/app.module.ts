@@ -39,6 +39,8 @@ import { MatListModule } from '@angular/material/list';
 import { TermsComponent } from './components/terms/terms.component';
 import { InitializerService } from './services/initializer.service';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap'
+import {LightboxModule} from 'ngx-lightbox';
+import { SafePipe } from './modules/safe.pipe'
 
 export function initialize(setup: InitializerService) {
   return () => setup.init()
@@ -62,6 +64,7 @@ export function initialize(setup: InitializerService) {
     AllWorksComponent,
     AboutPageComponent,
     TermsComponent,
+    SafePipe,
   ],
   imports: [
     BrowserModule,
@@ -80,7 +83,8 @@ export function initialize(setup: InitializerService) {
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    NgbModule
+    NgbModule,
+    LightboxModule
   ],
   providers: [InitializerService, {
     provide: APP_INITIALIZER,

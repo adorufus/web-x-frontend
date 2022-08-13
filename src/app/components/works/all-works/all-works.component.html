@@ -1,75 +1,106 @@
 <section class="container">
-    <div *ngIf="portfolio?.data?.length! > 0">
-        <div *ngFor="let tierData of portfolio?.data; index as i">
-            <div *ngIf="!(i % 2 == 1); else even_tier">
-                <div class="row" style="margin-top: 25px;">
-                    <div class="col">
-                        <div class="tier-txt">{{tierData.tier_name}}</div>
-                        <div style="margin-top: 25px;"></div>
-                        <div class="tier-detail">{{tierData.tier_description}}</div>
-                    </div>
-                    <div class="col">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
-                    </div>
-                    <div class="b-divider-20"></div>
-                    <div class="row">
-                        <div class="sample-txt">
-                            More Sample
-                        </div>
-                        <div style="height: 20px;"></div>
-                        <div>
-                            <div class="row" *ngIf="tierData.tier_portofolio_files?.length! > 0">
-                                <div class="col-lg-4 mb-4 mr-4 mb-lg-30 holder"
-                                    *ngFor="let imageUrl of tierData.tier_portofolio_files">
-                                    <img *ngIf="imageUrl.type === 'image'; else video " src={{imageUrl.url}}
-                                        class="w-100 sample-height" />
-                                    <ng-template #video>
-                                        <video controls src={{imageUrl.url}} class="w-100 sample-height"></video>
-                                    </ng-template>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="b-divider-20"></div>
+  <div *ngIf="portfolio?.data?.length! > 0">
+    <div *ngFor="let tierData of portfolio?.data; index as i">
+      <div *ngIf="!(i % 2 == 1); else even_tier">
+        <div class="row" style="margin-top: 25px">
+          <div class="col-6 col-lg">
+            <div class="tier-txt">{{ tierData.tier_name }}</div>
+            <div style="margin-top: 25px"></div>
+            <div class="tier-detail">{{ tierData.tier_description }}</div>
+          </div>
+          <div class="col-6 col-lg videowrapper" *ngFor="let url of ytUrl">
+            <iframe
+              width="560"
+              height="315"
+              [src]=" url | safe"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="b-divider-20"></div>
+          <div class="row no-right-padding">
+            <div class="sample-txt">More Sample</div>
+            <div style="height: 20px"></div>
+            <div
+                class="row"
+                *ngIf="tierData.tier_portofolio_files?.length! > 0"
+              >
+                <div
+                  class="col-12 col-md-4 col-lg-4 mb-4 mr-4 mb-lg-30 holder"
+                  *ngFor="
+                    let imageUrl of tierData.tier_portofolio_files;
+                    index as i
+                  "
+                >
+                  <img
+                    *ngIf="imageUrl.type === 'image'; else video"
+                    src="{{ imageUrl.url }}"
+                    class="w-100 sample-height"
+                    (click)="enlarge(i)"
+                  />
+                  <ng-template #video (click)="enlarge(i)">
+                    <video
+                      controls
+                      src="{{ imageUrl.url }}"
+                      class="w-100 sample-height"
+                    ></video>
+                  </ng-template>
                 </div>
-            </div>
-            <ng-template #even_tier>
-                <div class="row">
-                    <div class="col">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
-                    </div>
-                    <div class="col">
-                        <div class="tier-txt">{{tierData.tier_name}}</div>
-                        <div style="margin-top: 25px;"></div>
-                        <div class="tier-detail">{{tierData.tier_description}}</div>
-                    </div>
-                </div>
-                <div class="b-divider-20"></div>
-                <div class="row">
-                    <div class="sample-txt">
-                        More Sample
-                    </div>
-                    <div style="height: 20px;"></div>
-                    <div>
-                        <div class="row" *ngIf="tierData.tier_portofolio_files?.length! > 0">
-                            <div class="col-lg-4 mb-4 mr-4 mb-lg-30 holder"
-                                *ngFor="let imageUrl of tierData.tier_portofolio_files">
-                                <img *ngIf="imageUrl.type === 'image'; else video " src={{imageUrl.url}}
-                                    class="w-100 sample-height" />
-                                <ng-template #video>
-                                    <video src={{imageUrl.url}} class="w-100 sample-height"></video>
-                                </ng-template>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </ng-template>
+              </div>
+          </div>
+          <div class="b-divider-20"></div>
         </div>
+      </div>
+      <ng-template #even_tier>
+        <div class="row">
+          <div class="col">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="col">
+            <div class="tier-txt">{{ tierData.tier_name }}</div>
+            <div style="margin-top: 25px"></div>
+            <div class="tier-detail">{{ tierData.tier_description }}</div>
+          </div>
+        </div>
+        <div class="b-divider-20"></div>
+        <div class="row">
+          <div class="sample-txt">More Sample</div>
+          <div style="height: 20px"></div>
+          <div>
+            <div
+              class="row"
+              *ngIf="tierData.tier_portofolio_files?.length! > 0"
+            >
+              <div
+                class="col-lg-4 mb-4 mr-4 mb-lg-30 holder"
+                *ngFor="let imageUrl of tierData.tier_portofolio_files"
+              >
+                <img
+                  *ngIf="imageUrl.type === 'image'; else video"
+                  src="{{ imageUrl.url }}"
+                  class="w-100 sample-height"
+                />
+                <ng-template #video>
+                  <video
+                    src="{{ imageUrl.url }}"
+                    class="w-100 sample-height"
+                  ></video>
+                </ng-template>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
     </div>
+  </div>
 </section>

@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit, AfterViewInit } from '@angular/core';
 import { GeneralSettingsService } from './services/general-settings.service';
 import { BROWSER_STORAGE } from './utils/storage';
 
@@ -7,7 +7,7 @@ import { BROWSER_STORAGE } from './utils/storage';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit, AfterViewInit {
   
   title = 'Artemiz';
 
@@ -15,7 +15,11 @@ export class AppComponent {
     
   }
 
-  ngOninit(): void {
+  ngAfterViewInit(): void {
+    (<any>window).twttr.widgets.load(document.getElementById("container"))
+  }
+
+  ngOnInit(): void {
     // this.getSettings();
   }
 

@@ -1,3 +1,7 @@
 .card {
   outline: none;
 }
+
+.section-title {
+  margin-top: 0;
+}

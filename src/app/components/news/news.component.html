@@ -5,7 +5,6 @@
         <div *ngFor="let newsData of news?.data">
           <app-news-item [newsData]="newsData"></app-news-item>
         </div>
-        <a class="link d-flex" routerLink="/news">View All >></a>
       </div>
       <!-- <div style="height: 600px; align-items: center;">
         No news at the moment
@@ -18,6 +17,7 @@
           data-width="500"
           data-height="500"
           data-theme="light"
+          data-border-color="#dddddd"
           href="https://twitter.com/ArtemizComs?ref_src=twsrc%5Etfw"
           >Tweets by ArtemizComs</a
         >

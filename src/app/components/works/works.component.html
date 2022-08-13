@@ -10,8 +10,8 @@
         <div class="row" *ngIf="category?.data?.length! > 0">
             <div class="col-lg-6 mb-4 mb-lg-30 holder" *ngFor="let categoryData  of category?.data"
                 routerLink="../works/{{categoryData._id}}">
-                <img src={{categoryData.category_image_file}} class="w-100" />
-                <div class="top-text">{{categoryData.category_name}}</div>
+                <img src={{categoryData.category_image_file}} class="image-item" />
+                <!-- <div class="top-text">{{categoryData.category_name}}</div> -->
             </div>
         </div>
     </section>

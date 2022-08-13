@@ -36,6 +36,7 @@
     "dompurify": "2.2.9",
     "express": "^4.17.3",
     "jquery": "^3.6.0",
+    "ngx-lightbox": "^2.6.1",
     "ngx-owl-carousel-o": "^7.0.2",
     "path": "^0.12.7",
     "rxjs": "~7.5.0",
