@@ -5,20 +5,34 @@
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
-    border-radius: 20px;
+    border-radius: 10px;
+}
+
+.card-text {
+    max-lines: 2;
 }
 
 .mb {
     margin-bottom: 30px;
 }
 
-.img-cover { 
+.img-cover {
     border-top-left-radius: inherit;
     border-top-right-radius: inherit;
 }
 
+.card-img-top {
+    object-fit: contain;
+}
+
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {}
+@media only screen and (max-width: 600px) {
+    /* .column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+    } */
+}
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {}

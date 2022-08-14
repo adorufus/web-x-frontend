@@ -12,35 +12,39 @@ import { BROWSER_STORAGE } from 'src/app/utils/storage';
 })
 export class BannerComponent implements OnInit {
   banners?: Banner;
-  jumbotronUrl: string = "";
+  jumbotronUrl: string = '';
 
   customOptions: OwlOptions = {
+    loop: true,
+    stagePadding: 100,
+    margin: 10,
+    // autoHeight: true,
+    autoWidth: true,
+    center: true,
+    autoplay: true,
+    autoplayTimeout: 3000,
     responsive: {
       0: {
-        loop: true,
-        stagePadding: 100,
-        margin: 10,
-        autoHeight: true,
-        center: true,
         items: 1,
-        autoplay: true,
-        autoplayTimeout: 3000,
       },
-      768: {
-        loop: true,
-        stagePadding: 100,
-        margin: 10,
-        center: true,
+      400: {
         items: 2,
-        autoplay: true,
-        autoplayTimeout: 3000,
-      }
+      },
+      767: {
+        items: 2,
+      },
+      1024: {
+        items: 2,
+      },
     },
     lazyLoad: true,
   };
 
-  constructor(private bannerService: BannerService, @Inject(BROWSER_STORAGE) private storage: Storage) {
-    this.jumbotronUrl = this.storage.getItem("jumbotron_image") ?? ""
+  constructor(
+    private bannerService: BannerService,
+    @Inject(BROWSER_STORAGE) private storage: Storage
+  ) {
+    this.jumbotronUrl = this.storage.getItem('jumbotron_image') ?? '';
   }
 
   ngOnInit(): void {
