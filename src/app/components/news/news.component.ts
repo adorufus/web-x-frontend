@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { catchError, Observable, of, tap } from 'rxjs';
 import { News } from 'src/app/models/news.model';
+import {Router} from '@angular/router'
 import { NewsService } from 'src/app/services/news/news.service';
 
 @Component({
@@ -11,10 +12,14 @@ import { NewsService } from 'src/app/services/news/news.service';
 export class NewsComponent implements OnInit {
   news?: News;
 
-  constructor(private newsService: NewsService) {}
+  constructor(private newsService: NewsService, private router: Router) {}
 
   ngOnInit(): void {
     this.fetchNews();
+  }
+
+  navigateNews(newsId: string) {
+    this.router.navigateByUrl(`/news/${newsId}`);
   }
 
   fetchNews(): void {

@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { EnvironmentConfig, ENV_CONFIG } from 'src/app/interfaces/env-config';
-import { News } from 'src/app/models/news.model';
+import { News, NewsData, NewsSingle } from 'src/app/models/news.model';
 
 @Injectable({
   providedIn: 'root',
@@ -25,5 +25,9 @@ export class NewsService {
         'Bypass-Tunnel-Reminder': 'true',
       },
     });
+  }
+
+  getNewsById(id: string): Observable<NewsSingle> {
+    return this.http.get<NewsSingle>(this.apiUrl! + `news?id=${id}`)
   }
 }

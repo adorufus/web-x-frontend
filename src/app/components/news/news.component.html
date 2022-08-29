@@ -3,7 +3,7 @@
     <div class="col-lg">
       <div  *ngIf="news?.data?.length! > 0">
         <div *ngFor="let newsData of news?.data">
-          <app-news-item [newsData]="newsData"></app-news-item>
+          <app-news-item [newsData]="newsData" (click)="navigateNews(newsData._id!)"></app-news-item>
         </div>
       </div>
       <!-- <div style="height: 600px; align-items: center;">

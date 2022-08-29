@@ -1,8 +1,13 @@
 export class News {
-    data?: Data[]
+    data?: NewsData[]
 }
 
-class Data {
+export class NewsSingle {
+    data? : NewsData
+}
+
+export class NewsData {
+    _id?: string;
     image?: string;
     thumbnail?: string;
     article?: string;

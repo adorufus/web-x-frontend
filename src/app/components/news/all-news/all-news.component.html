@@ -10,7 +10,7 @@
         <div class="row" *ngIf="news?.data?.length! > 0">
 
             <div *ngFor="let newsItem of news?.data" class="col-6 col-md-4 col-lg-4 mb">
-                <app-news-card [newsData]="newsItem"></app-news-card>
+                <app-news-card [newsData]="newsItem" (click)="navigateNews(newsItem._id!)"></app-news-card>
             </div>
         </div>
     </section>
