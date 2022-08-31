@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AboutPageComponent } from './components/about-us/about-page/about-page.component';
 import { AllNewsComponent } from './components/news/all-news/all-news.component';
 import { NewsDetailsComponent } from './components/news/news-details/news-details.component';
 import { TermsComponent } from './components/terms/terms.component';
@@ -17,6 +18,10 @@ const routes: Routes = [
     path: '',
     redirectTo: '/home',
     pathMatch: 'full',
+  },
+  {
+    path: 'about',
+    component: AboutPageComponent
   },
   {
     path: 'news',
